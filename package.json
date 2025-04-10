@@ -1,7 +1,11 @@
 {
   "name": "shaper-react-example",
   "private": true,
-  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taleshape-com/shaper-react-example.git"
+  },
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
@@ -23,6 +27,7 @@
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
     "react-router-devtools": "^1.1.0",
+    "shaper-react": "^0.2.0",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.2",
     "vite": "^5.4.11",
