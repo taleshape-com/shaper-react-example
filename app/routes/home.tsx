@@ -1,4 +1,6 @@
+import { useFetcher } from "react-router";
 import type { Route } from "./+types/home";
+import type { Info as JwtInfo } from "./+types/jwt";
 import { ShaperDashboard } from "shaper-react";
 
 export function meta({ }: Route.MetaArgs) {
@@ -9,14 +11,7 @@ export function meta({ }: Route.MetaArgs) {
 }
 
 export default function Home() {
-  const getJwt = async (): Promise<string> => {
-    console.log('get jwt');
-    const res = await fetch("/api/jwt", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-    });
-    return res.json();
-  };
+  const fetcher = useFetcher<JwtInfo['loaderData']>();
 
   return (
     <div>
@@ -24,8 +19,11 @@ export default function Home() {
       <p>Dashboard will be embedded here:</p>
       <ShaperDashboard
         baseUrl="http://localhost:5454"
-        dashboardId="hktf9zy22rurvut8txg931m9"
-        getJwt={getJwt}
+        jwt={fetcher.data?.jwt}
+        refreshJwt={() => {
+          fetcher.load("/jwt");
+        }}
+        id="uxg64k41kc6el5v7o0vxfwbz"
       />
     </div>
   );
