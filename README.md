@@ -1,13 +1,17 @@
 # shaper-react embedding demo
 
-Embedding a Shaper dashboard into a React Router app using the [Shaper React SDK](https://github.com/taleshape-com/shaper-react)
+Embedding a [Shaper](https://taleshape.com) dashboard into a React Router app using the [Shaper React SDK](https://github.com/taleshape-com/shaper-react)
 
 ---
 
 See the [index route](./app/routes/index.tsx) for how to use the `ShaperDashboard` component.
+
 The demo uses a [fetcher](https://reactrouter.com/how-to/fetchers) load a JWT.
+
 See the [/jwt route](./app/routes/jwt.tsx) for how to create a JWT using the Shaper API.
+
 Make sure to never expose the `API_KEY` in the client code.
+
 In a real application, you would need to make sure the user is allowed to see the specified dashboard and set variables based on the user's permissions.
 
 
@@ -42,5 +46,5 @@ Start the development server:
 npm run dev
 ```
 
-Your application will be available at http://localhost:5173
+Then open http://localhost:5173
 
