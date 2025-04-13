@@ -4,7 +4,7 @@ Embedding a [Shaper](https://taleshape.com) dashboard into a React Router app us
 
 ---
 
-See the [index route](./app/routes/index.tsx) for how to use the `ShaperDashboard` component.
+See the [index route](./app/routes/home.tsx) for how to use the `ShaperDashboard` component.
 
 The demo uses a [fetcher](https://reactrouter.com/how-to/fetchers) load a JWT.
 
