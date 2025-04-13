@@ -2,6 +2,7 @@ import { useFetcher } from "react-router";
 import type { Route } from "./+types/home";
 import type { Info as JwtInfo } from "./+types/jwt";
 import { ShaperDashboard } from "shaper-react";
+import { env } from "../env";
 
 export function meta({ }: Route.MetaArgs) {
   return [
@@ -9,8 +10,15 @@ export function meta({ }: Route.MetaArgs) {
     { name: "description", content: "Welcome to React Router!" },
   ];
 }
+export function loader() {
+  const { BASE_URL, DASHBOARD_ID } = env();
+  return {
+    dashboardId: DASHBOARD_ID,
+    baseUrl: BASE_URL,
+  };
+}
 
-export default function Home() {
+export default function Home({ loaderData }: Route.ComponentProps) {
   const fetcher = useFetcher<JwtInfo['loaderData']>();
 
   return (
@@ -18,12 +26,12 @@ export default function Home() {
       <h1 className="text-xl font-bold">Embedding Demo</h1>
       <p>Dashboard will be embedded here:</p>
       <ShaperDashboard
-        baseUrl="http://localhost:5454"
+        baseUrl={loaderData.baseUrl}
         jwt={fetcher.data?.jwt}
         refreshJwt={() => {
           fetcher.load("/jwt");
         }}
-        id="uxg64k41kc6el5v7o0vxfwbz"
+        id={loaderData.dashboardId}
       />
     </div>
   );

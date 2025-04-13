@@ -1,13 +1,7 @@
-const BASE_URL = "http://localhost:5454";
-const API_KEY = process.env.API_KEY;
-const DASHBOARD_ID = process.env.DASHBOARD_ID;
-const VARIABLES = process.env.VARIABLES || "{}";
+import { env } from "../env";
 
 export async function loader(): Promise<{ jwt: string }> {
-  if (!API_KEY) {
-    throw new Error("API_KEY env var is required");
-  }
-
+  const { BASE_URL, DASHBOARD_ID, API_KEY, VARIABLES } = env();
   const r = await fetch(`${BASE_URL}/api/auth/token`, {
     method: "POST",
     headers: {
