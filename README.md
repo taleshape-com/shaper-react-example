@@ -1,6 +1,6 @@
-# shaper-react embedding demo
+# Shaper React Embedding Demo
 
-Embedding a [Shaper](https://taleshape.com) dashboard into a React Router app using the [Shaper React SDK](https://github.com/taleshape-com/shaper-react)
+Embed a [Shaper](https://taleshape.com/shaper/) dashboard into a React Router app using the [Shaper React SDK](https://github.com/taleshape-com/shaper-react)
 
 ---
 
