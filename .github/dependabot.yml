@@ -1,0 +1,12 @@
+version: 2
+updates:
+  # Keep npm dependencies up to date
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    # Group all updates together
+    groups:
+      dependencies:
+        patterns:
+          - '*'
