@@ -10,7 +10,7 @@ export async function loader(): Promise<{ jwt: string }> {
     body: JSON.stringify({
       token: API_KEY,
       dashboardId: DASHBOARD_ID,
-      variables: JSON.parse(VARIABLES),
+      variables: VARIABLES,
     }),
   });
 

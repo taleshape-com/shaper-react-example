@@ -11,10 +11,11 @@ export function meta({ }: Route.MetaArgs) {
   ];
 }
 export function loader() {
-  const { BASE_URL, DASHBOARD_ID } = env();
+  const { BASE_URL, DASHBOARD_ID, VARIABLES } = env();
   return {
     dashboardId: DASHBOARD_ID,
     baseUrl: BASE_URL,
+    variables: VARIABLES,
   };
 }
 
@@ -29,7 +30,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <div>
       <h1 className="text-xl font-bold">Embedding Demo</h1>
-      <p>Dashboard will be embedded here:</p>
+      <p>{`Dashboard "${loaderData.dashboardId}" will be embedded here with user_id set to "${loaderData.variables.user_id}":`}</p>
       <ShaperDashboard
         baseUrl={loaderData.baseUrl}
         id={loaderData.dashboardId}
