@@ -15,15 +15,15 @@
     "shaper": "docker run --rm -it -p5454:5454 -v ./data:/data taleshape/shaper"
   },
   "dependencies": {
-    "@react-router/node": "^7.5.1",
-    "@react-router/serve": "^7.5.1",
-    "isbot": "^5.1.17",
+    "@react-router/node": "^7.5.2",
+    "@react-router/serve": "^7.5.2",
+    "isbot": "^5.1.27",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router": "^7.5.1"
+    "react-router": "^7.5.2"
   },
   "devDependencies": {
-    "@react-router/dev": "^7.5.1",
+    "@react-router/dev": "^7.5.2",
     "@tailwindcss/vite": "^4.0.0",
     "@types/node": "^22",
     "@types/react": "^19.0.1",
@@ -32,7 +32,7 @@
     "shaper-react": "^0.5.2",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.2",
-    "vite": "^6.3.2",
+    "vite": "^6.3.3",
     "vite-tsconfig-paths": "^5.1.4"
   }
 }
