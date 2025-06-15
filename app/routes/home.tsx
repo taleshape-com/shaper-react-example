@@ -32,7 +32,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       <h1 className="text-xl font-bold">Embedding Demo</h1>
       <p>{`Dashboard "${loaderData.dashboardId}" will be embedded here with user_id set to "${loaderData.variables.user_id}":`}</p>
       <ShaperDashboard
-        className="h-[calc(100dvh-7.5rem)]"
+        className="h-[calc(100dvh-5.8rem)] !-ml-4 w-[calc(100%+2rem)]"
         baseUrl={loaderData.baseUrl}
         id={loaderData.dashboardId}
         jwt={fetcher.data?.jwt}
